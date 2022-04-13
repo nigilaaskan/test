@@ -44,7 +44,7 @@ jobs:
       uses: Creepios/sftp-action@v1.0.3
       with:
         host: 103.98.32.40
-        username: 'root'
+        username: 'omni'
         password: ${{ secrets.password }} 
         port: 22 
         remotePath: '/public_html/github/'
