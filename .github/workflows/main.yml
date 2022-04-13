@@ -47,4 +47,4 @@ jobs:
         username: root
         password: ${{ secrets.password }}
         protocol: ftps-legacy
-        remote_path: /home/omni/public_html/github/
+        server-dir: /home/omni/public_html/github/
