@@ -29,7 +29,6 @@ jobs:
           password: ${{ secrets.password }} 
           
           # will put all file under this path
-          local_path: ./* # default is ./*
           # files will copy to under remote_path
           remote_path: /home/omni/public_html/github/
           
