@@ -46,4 +46,4 @@ jobs:
         server: 103.98.32.40
         username: root
         password: ${{ secrets.password }}
-        protocol: sftp
+        protocol: ftp
