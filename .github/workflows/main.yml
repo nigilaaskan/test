@@ -47,4 +47,5 @@ jobs:
         username: 'omni'
         password: ${{ secrets.password }} 
         port: 22 
+        protocol: ftps
         remote_path: '/public_html/github/'
