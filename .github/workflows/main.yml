@@ -43,7 +43,7 @@ jobs:
     - name: Sync files
       uses: Creepios/sftp-action@v1.0.3
       with:
-        host: 103.98.32.40
+        host: '103.98.32.40'
         username: 'omni'
         password: ${{ secrets.password }} 
         port: 22 
