@@ -14,17 +14,19 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  web-deploy:
-    name: Deploy
+  deploy_job:
     runs-on: ubuntu-latest
+    name: build&deploy
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
-    
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: 103.98.32.40
-        username: omni
-        password: ${{ secrets.password }}
-        server-dir: '/public_html/github/'
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: deploy file to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: 'root'
+          server: '54.163.3.125'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           local_path: './build/*'
+          remote_path: '/mnt/princesatoalhas/app/current/public/ftptesting'
