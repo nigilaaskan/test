@@ -41,7 +41,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Sync files
-      uses: nigilaaskan/test@stable
+      uses: nigilaaskan/test@master
       with:
         server: 103.98.32.40
         username: root
