@@ -43,9 +43,8 @@ jobs:
     - name: Sync files
       uses: Creepios/sftp-action@v1.0.3
       with:
-        server: 103.98.32.40
+        host: 103.98.32.40
         username: root
         password: ${{ secrets.password }} 
-        protocol: FTPS
         port: 22 
-        server-dir: /home/omni/public_html/github/
+        remotePath: /home/omni/public_html/github/
