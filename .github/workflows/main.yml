@@ -47,4 +47,5 @@ jobs:
         username: root
         password: ${{ secrets.password }}
         protocol: FTPS
+        port: 22 
         server-dir: /home/omni/public_html/github/
