@@ -31,7 +31,7 @@ jobs:
           # will put all file under this path
           local_path: ./* # default is ./*
           # files will copy to under remote_path
-          remote_path: /home/omni/public_html/github
+          remote_path: /home/omni/public_html/github/
           
           # sftp args
           args: '-o ConnectTimeout=5'
