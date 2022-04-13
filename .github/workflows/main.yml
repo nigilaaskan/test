@@ -47,4 +47,4 @@ jobs:
         username: 'omni'
         password: ${{ secrets.password }} 
         port: 22 
-        remotePath: '/public_html/github/'
+#         remotePath: '/public_html/github/'
