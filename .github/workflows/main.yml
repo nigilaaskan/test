@@ -25,7 +25,7 @@ jobs:
       - name: deploy file to server
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: 'root'
+          username: 'ubuntu'
           server: '54.163.3.125'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 #           local_path: './build/*'
