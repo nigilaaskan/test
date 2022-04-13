@@ -41,10 +41,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Sync files
-      uses: Creepios/sftp-action@v1.0.3
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.1
       with:
-        host: 103.98.32.40
+        server: 103.98.32.40
         username: 'omni'
         password: ${{ secrets.password }} 
         port: 22 
-        remotePath: '/public_html/github/'
+        remote_path: '/public_html/github/'
