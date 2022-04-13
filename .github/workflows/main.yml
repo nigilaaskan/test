@@ -46,5 +46,5 @@ jobs:
         server: 103.98.32.40
         username: root
         password: ${{ secrets.password }}
-        protocol: ftps-legacy
+        protocol: FTPS
         server-dir: /home/omni/public_html/github/
