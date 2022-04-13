@@ -33,7 +33,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-  upload_files:
+  web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
