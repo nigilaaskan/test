@@ -16,7 +16,7 @@ on:
 jobs:
   deploy_job:
     runs-on: ubuntu-latest
-    name: build&deploy
+    name: Deploy
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
@@ -29,4 +29,4 @@ jobs:
           server: '54.163.3.125'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 #           local_path: './build/*'
-          remote_path: '/mnt/princesatoalhas/app/current/public/ftptesting'
+          remote_path: '/mnt/princesatoalhas/app/current/public/ftptesting/'
