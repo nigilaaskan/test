@@ -27,4 +27,4 @@ jobs:
         server: 103.98.32.40
         username: omni
         password: ${{ secrets.password }}
-        server-dir: '/public_html/github'
+        server-dir: '/public_html/github/'
