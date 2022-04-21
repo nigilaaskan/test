@@ -28,4 +28,4 @@ jobs:
           server: 103.98.32.40
           username: devnew
           password: "@kTtY4[a"
-          server-dir: /githubb/
+          server-dir: /public_html/githubb/
