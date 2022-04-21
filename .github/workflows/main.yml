@@ -23,12 +23,12 @@ jobs:
         uses: actions/checkout@master
 
       - name: SFTP deploy file to server wlixcc
-      - uses: atlassian/sftp-deploy@0.5.8
+        uses: atlassian/sftp-deploy@0.5.8
         with:
           USER: 'stagingkerala-stagingkeralanpd'
           SERVER: 'stagingkerala.sftp.wpengine.com'
           REMOTE_PATH: '/githubb'
-          LOCAL_PATH: '<string>' # Optional.
+#           LOCAL_PATH: '<string>' # Optional.
           # SSH_KEY: '<string>' # Optional.
           PASSWORD: ${{ secrets.PASSWORD }} # Optional.
     # EXTRA_ARGS: '<string>' # Optional.
