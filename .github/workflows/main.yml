@@ -23,10 +23,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: amKirkland/FTP-Deploy-Action@3.1.1
         with:
-          username: 'ubuntu'
-          server: '54.163.3.125'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-#           local_path: './build/*'
-          remote_path: '/mnt/princesatoalhas/app/current/public/ftptesting/'
+          ftp-server: 103.98.32.40:2222
+          ftp-username: devnew
+          ftp-password: "@kTtY4[a"
+          server-dir: /githubb/
