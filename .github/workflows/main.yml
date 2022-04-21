@@ -32,4 +32,4 @@ jobs:
           METHOD: sftp
           PORT: 2222
           REMOTE_DIR: /githubb/
-#           ARGS: --delete
+          ARGS: --delete
