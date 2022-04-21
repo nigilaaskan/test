@@ -31,5 +31,5 @@ jobs:
 #           LOCAL_DIR: build
 #           METHOD: sftp
           port: 2222
-          source: /githubb/
+          target: /githubb/
 #           ARGS: --delete
