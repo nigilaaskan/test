@@ -26,6 +26,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: stagingkerala.sftp.wpengine.com
+          port: 2222
           username: stagingkerala-stagingkeralanpd
           password: ${{ secrets.PASSWORD }}
           server-dir: /githubb/
