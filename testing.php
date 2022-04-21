@@ -1,1 +1,1 @@
-<?php echo "This is new file testing"; ?>
+<?php echo "This is new file"; ?>
