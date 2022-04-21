@@ -20,16 +20,16 @@ jobs:
     steps:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
-      - name: SFTP deploy file to server
-        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      - name: SFTP deploy file to server appleboy
+        uses: appleboy/scp-action@master
         env:
-          FTP_SERVER: stagingkerala.sftp.wpengine.com
-          FTP_USERNAME: stagingkerala-stagingkeralanpd
-          FTP_PASSWORD: ${{ secrets.PASSWORD }}
+          host: stagingkerala.sftp.wpengine.com
+          username: stagingkerala-stagingkeralanpd
+          password: ${{ secrets.PASSWORD }}
 #           LOCAL_DIR: build
-          METHOD: sftp
-          PORT: 2222
-          REMOTE_DIR: /githubb/
-          ARGS: --delete
+#           METHOD: sftp
+          port: 2222
+          source: /githubb/
+#           ARGS: --delete
