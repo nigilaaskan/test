@@ -27,7 +27,7 @@ jobs:
         with:
           username: 'stagingkerala-stagingkeralanpd'
           server: 'stagingkerala.sftp.wpengine.com'
-          password: ${{ secrets.PASSWORD }}
+          ssh_private_key: ${{ secrets.PASSWORD }}
 #           local_path: './build/*'
           remote_path: '/githubb'
           args: '-o ConnectTimeout=5'
