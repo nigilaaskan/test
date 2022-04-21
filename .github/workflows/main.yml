@@ -26,6 +26,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: 103.98.32.40
-          username: devnew
-          password: "@kTtY4[a"
-          server-dir: /public_html/githubb/
+          username: code
+          password: ${{ secrets.PASSWORD }}
+          server-dir: /githubb/
