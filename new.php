@@ -1,1 +1,1 @@
-<?php echo "new file"; ?>
+<?php echo "new sftp file"; ?>
