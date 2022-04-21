@@ -23,12 +23,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: SFTP deploy file to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
         with:
-          username: ubuntu
-          server: 54.163.3.125
-          port: 22
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './*'
-#           remote_path: '/mnt/princesatoalhas/app/current/public/githubb'
-          args: '-o ConnectTimeout=5'
+          FTP_SERVER: stagingkerala.sftp.wpengine.com
+          FTP_USERNAME: stagingkerala-stagingkeralanpd
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+#           LOCAL_DIR: build
+          METHOD: sftp
+          PORT: 22
+          ARGS: --delete
