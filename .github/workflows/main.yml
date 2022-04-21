@@ -29,5 +29,5 @@ jobs:
           server: '54.163.3.125'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
 #           local_path: './static/*'
-          remote_path: '../../mnt/princesatoalhas/app/current/public/githubb'
+          remote_path: '/mnt/princesatoalhas/app/current/public/githubb'
           args: '-o ConnectTimeout=5'
