@@ -24,7 +24,7 @@ jobs:
 
       - name: SFTP deploy file to server
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
-        with:
+        env:
           FTP_SERVER: stagingkerala.sftp.wpengine.com
           FTP_USERNAME: stagingkerala-stagingkeralanpd
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
