@@ -23,10 +23,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: deploy file to server
-        uses: Creepios/sftp-action@v1.0.3
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          host: stagingkerala.sftp.wpengine.com
-          port: 22
-          username: 'stagingkerala-stagingkeralanpd'
-          password: ${{ secrets.PASSWORD }}
-          remotePath: '/githubb/'
+          username: 'ubuntu'
+          server: '54.163.3.125'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+#           local_path: './static/*'
+          remote_path: '../../mnt/princesatoalhas/app/current/public/githubb'
+          args: '-o ConnectTimeout=5'
