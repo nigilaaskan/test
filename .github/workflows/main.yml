@@ -27,7 +27,7 @@ jobs:
         env:
           FTP_SERVER: stagingkerala.sftp.wpengine.com
           FTP_USERNAME: stagingkerala-stagingkeralanpd
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PASSWORD: ${{ secrets.PASSWORD }}
 #           LOCAL_DIR: build
           METHOD: sftp
           PORT: 22
