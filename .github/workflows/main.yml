@@ -24,7 +24,7 @@ jobs:
 
       - name: SFTP deploy file to server appleboy
         uses: appleboy/scp-action@master
-        env:
+        with:
           host: stagingkerala.sftp.wpengine.com
           username: stagingkerala-stagingkeralanpd
           password: ${{ secrets.PASSWORD }}
