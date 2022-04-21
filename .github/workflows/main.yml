@@ -22,14 +22,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: SFTP deploy file to server appleboy
-        uses: appleboy/scp-action@master
+      - name: SFTP deploy file to server wlixcc
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          host: stagingkerala.sftp.wpengine.com
-          username: stagingkerala-stagingkeralanpd
+          username: 'stagingkerala-stagingkeralanpd'
+          server: 'stagingkerala.sftp.wpengine.com'
           password: ${{ secrets.PASSWORD }}
-#           LOCAL_DIR: build
-#           METHOD: sftp
-          port: 2222
-          target: /githubb/
-#           ARGS: --delete
+#           local_path: './build/*'
+          remote_path: '/githubb'
+          args: '-o ConnectTimeout=5'
