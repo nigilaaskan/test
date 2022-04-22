@@ -28,4 +28,3 @@ jobs:
         port: 2222
         username: 'stagingkerala-stagingkeralanpd'
         password: ${{ secrets.PASSWORD }}
-        remotePath: '/githubb'
