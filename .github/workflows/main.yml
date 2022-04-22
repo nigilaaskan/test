@@ -14,22 +14,18 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy_job:
+  upload_files:
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Upload a builded file.
     steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@master
-
-      - name: SFTP deploy file to server wlixcc
-        uses: atlassian/sftp-deploy@0.5.8
-        with:
-          USER: 'stagingkerala-stagingkeralanpd'
-          SERVER: 'stagingkerala.sftp.wpengine.com'
-          REMOTE_PATH: '/githubb'
-#           LOCAL_PATH: '<string>' # Optional.
-          # SSH_KEY: '<string>' # Optional.
-          PASSWORD: ${{ secrets.PASSWORD }} # Optional.
-    # EXTRA_ARGS: '<string>' # Optional.
-    # DEBUG: '<boolean>' # Optional.
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+    - name: Upload Files
+      id: upload
+      uses: Creepios/sftp-action@v1.0.3
+      with:
+        host: 'stagingkerala.sftp.wpengine.com'
+        port: 22
+        username: 'stagingkerala-stagingkeralanpd'
+        password: ${{ secrets.PASSWORD }}
+        remotePath: '/githubb'
