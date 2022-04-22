@@ -25,7 +25,7 @@ jobs:
       uses: Creepios/sftp-action@v1.0.3
       with:
         host: 'stagingkerala.sftp.wpengine.com'
-        port: 22
+        port: 2222
         username: 'stagingkerala-stagingkeralanpd'
         password: ${{ secrets.PASSWORD }}
         remotePath: '/githubb'
