@@ -31,7 +31,7 @@ jobs:
       run: |
         sudo apt-get install sshpass
         sudo apt-get install -y rsync
-        sshpass -p "$LIVE_SERVER_PASSWORD" rsync -O --exclude='.git/' --ignore-existing --exclude='.gitlab-ci.yml' --exclude='.github/' -rav -e 'ssh -o StrictHostKeyChecking=no -p 22' .  $LIVE_SERVER_USERNAME@$LIVE_SERVER_HOST:$LIVE_SERVER_PATH
+        sshpass -p "$LIVE_SERVER_PASSWORD" rsync -O --exclude='.git/' --update --ignore-existing --exclude='.gitlab-ci.yml' --exclude='.github/' -rav -e 'ssh -o StrictHostKeyChecking=no -p 22' .  $LIVE_SERVER_USERNAME@$LIVE_SERVER_HOST:$LIVE_SERVER_PATH
 #     - name: Migrate the Database
 #       run: |
 #         chmod +x ./ops/migration.sh
