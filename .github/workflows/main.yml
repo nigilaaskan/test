@@ -11,20 +11,29 @@ on:
     branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+env:
+  LIVE_SERVER_PASSWORD: ${{ secrets.LIVE_SERVER_PASSWORD }}
+  LIVE_SERVER_USERNAME: ${{ secrets.LIVE_SERVER_USERNAME }}
+  LIVE_SERVER_HOST: ${{ secrets.LIVE_SERVER_HOST }}
+  LIVE_SERVER_PATH: ${{ secrets.LIVE_SERVER_PATH }}
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  upload_files:
+  Live-deploy:
+    name: Live-deploy
     runs-on: ubuntu-latest
-    name: Upload a builded file.
+
     steps:
     - name: Checkout
-      uses: actions/checkout@v2.3.4
-    - name: Upload Files
-      id: upload
-      uses: Creepios/sftp-action@v1.0.3
-      with:
-        host: 'stagingkerala.sftp.wpengine.com'
-        port: 2222
-        username: 'stagingkerala-stagingkeralanpd'
-        password: ${{ secrets.PASSWORD }}
+      uses: actions/checkout@v2
+
+    - name: Install Dependency and Deploy on Live Server
+      if: github.ref == 'refs/heads/main'
+      run: |
+        sudo apt-get install sshpass
+        sudo apt-get install -y rsync
+        sshpass -p "$LIVE_SERVER_PASSWORD" rsync -O --exclude='.git/' --exclude='.gitlab-ci.yml' --exclude='.github/' -rav -e 'ssh -o StrictHostKeyChecking=no -p 22' .  $LIVE_SERVER_USERNAME@$LIVE_SERVER_HOST:$LIVE_SERVER_PATH
+    - name: Migrate the Database
+      run: |
+        chmod +x ./ops/migration.sh
+        sed -i "s|<SERVER_PATH>|$LIVE_SERVER_PATH|g" ./ops/migration.sh
+        sshpass -p "$LIVE_SERVER_PASSWORD" ssh $LIVE_SERVER_USERNAME@$LIVE_SERVER_HOST PROJECT_PATH="$LIVE_SERVER_PATH" 'bash' < ./ops/migration.sh	
